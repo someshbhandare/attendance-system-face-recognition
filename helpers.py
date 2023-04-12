@@ -29,7 +29,7 @@ def find_encodings(images):
     encode_list = []
     for img in images:
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        encode = face_recognition.face_encodings(img, num_jitters=5)[0]
+        encode = face_recognition.face_encodings(img, num_jitters=5, model="cnn")[0]
         encode_list.append(encode)
     return encode_list
 
